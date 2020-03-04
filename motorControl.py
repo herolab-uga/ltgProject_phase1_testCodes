@@ -15,8 +15,9 @@ class MotorControl:
 	mb_p1=""
 	pwmSpeed=""
 	def __init__(self):
-		self.pwmSpeed=40
-		self.pwmSpeed1=70
+		self.pwmSpeed=80
+		self.pwmSpeed1=80
+		self.pwmSpeed2=80
 		self.mb_p1=11
 		self.mb_p2=12
 		self.mf_p1=15
@@ -51,14 +52,14 @@ class MotorControl:
 		GPIO.output(self.mb_p2,GPIO.LOW)
 		GPIO.output(self.mf_p1,GPIO.HIGH)
 		GPIO.output(self.mf_p2,GPIO.LOW)
-		self.mb_pwm.ChangeDutyCycle(self.pwmSpeed)
+		self.mb_pwm.ChangeDutyCycle(self.pwmSpeed2)
 		self.mf_pwm.ChangeDutyCycle(self.pwmSpeed1)
 	def MoveRight(self):
 		GPIO.output(self.mb_p1,GPIO.HIGH)
 		GPIO.output(self.mb_p2,GPIO.LOW)
 		GPIO.output(self.mf_p1,GPIO.LOW)
 		GPIO.output(self.mf_p2,GPIO.HIGH)
-		self.mb_pwm.ChangeDutyCycle(self.pwmSpeed)
+		self.mb_pwm.ChangeDutyCycle(self.pwmSpeed2)
 		self.mf_pwm.ChangeDutyCycle(self.pwmSpeed1)
 	def Stopper(self):
 		GPIO.output(self.mb_p1,GPIO.LOW)
