@@ -15,7 +15,7 @@ class MotorControl:
 	mb_p1=""
 	pwmSpeed=""
 	def __init__(self):
-		self.pwmSpeed=80
+		self.pwmSpeed=40
 		self.pwmSpeed1=70
 		self.mb_p1=11
 		self.mb_p2=12
